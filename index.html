@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Date Picker -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/util.css">
+        
+    <title>D'Paradise</title>
+</head>
+<body>
+
+    <div class="wrapper position-relative min-h-100vh" id="home">
+        <!-- Header -->
+        <header class="position-relative">
+            <nav class="navbar navbar-expand-lg navbar-dark gradient trans-0-4" id="nav-header">
+                <div class="container position-relative">
+                    <a class="navbar-brand fs-28 mb-3 mb-lg-0 fw-bold" href="#">
+                        D'Paradise
+                    </a> 
+                    <button class="navbar-toggler collapsed fs-30 mb-3 mb-lg-0" type="button" id="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class='fa-solid fa-bars open'></i>
+                        <i class="fa-solid fa-xmark close"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navMenu">
+                        <ul class="navbar-nav mb-2 mb-lg-0 w-full justify-content-center">
+                            <li class="nav-item p-r-32">
+                                <a class="nav-link fw-bold" id="nav-item" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item p-r-32">
+                                <a class="nav-link fw-bold" id="nav-item" href="#about">About Us</a>
+                            </li>
+                            <li class="nav-item p-r-32">
+                                <a class="nav-link fw-bold" id="nav-item" href="#services">Services</a>
+                            </li>
+                            <li class="nav-item p-r-32">
+                                <a class="nav-link fw-bold" id="nav-item" href="#testimonials">Testimonials</a>
+                            </li>
+                            <li class="nav-item p-r-32">
+                                <a class="nav-link fw-bold" id="nav-item" href="#pricing">Pricing</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-warning mb-2 mb-lg-0 trans-0-4 reservation-btn" data-bs-toggle="modal" data-bs-target="#reservation-modal">
+                            Reservation
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <div class="d-none" id="click-collapse"></div>
+        </header>
+        <!-- Header end -->
+    
+        <!-- Reservation modal -->
+        <div class="modal fade" id="reservation-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header" style="border-bottom: solid 6px #ffc107">
+                    <h5 class="modal-title" id="exampleModalLabel";>Book Room</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <!-- Date -->
+                                            <div class="input-group mb-3">
+                                                <div class="d-block w-full mb-2">Date</div>
+                                                <input type="text" class="pick-calendar form-control fs-14" id="date" aria-describedby="button-addon2" required>
+                                                <button class="btn btn-outline-secondary btn-calendar" type="button" id="button-addon2"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                                            </div>
+                    
+                                            <!-- Room -->
+                                            <div class="mb-3">
+                                                <label for="suites" class="form-label">Suites</label>
+                                                <select class="form-select fs-14" id="suites" required>
+                                                    <option value=""></option>
+                                                    <option value="regular">Regular</option>
+                                                    <option value="deluxe">Deluxe</option>
+                                                    <option value="presidential">Presidential</option>
+                                                </select>
+                                            </div>
+                    
+                                            <!-- People -->
+                                            <div class="mb-3">
+                                                <label for="people" class="form-label">People</label>
+                                                <select class="form-select fs-14" id="people" required>
+                                                    <option value=""></option>
+                                                    <option value="1">1 person</option>
+                                                    <option value="2">2 people</option>
+                                                    <option value="3">3 people</option>
+                                                    <option value="4">4 people</option>
+                                                    <option value="5">5 people</option>
+                                                    <option value="6">6 people</option>
+                                                    <option value="7">7 people</option>
+                                                    <option value="8">8 people</option>
+                                                    <option value="9">9 people</option>
+                                                    <option value="10">10 people</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="col-6">
+                                            <!-- Name -->
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control fs-14" id="name" required>
+                                            </div>
+                    
+                                            <!-- Phone -->
+                                            <div class="mb-3">
+                                                <label for="pNumber" class="form-label">Phone Number</label>
+                                                <input type="number" class="form-control fs-14" id="pNumber" required>
+                                            </div>
+
+                    
+                                            <!-- Email -->                    
+                                            <div class="mb-3">
+                                                <label for="email" class="form-label">Email address</label>
+                                                <input type="email" class="form-control fs-14" id="email" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 d-flex justify-content-end">
+                                        <!-- Button3 -->
+                                        <button type="submit" class="btn btn-warning">
+                                            Book Table
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- Reservation modal end -->
+
+        <!-- Slider carousel -->
+        <section class="position-absolute top-0 start-0">
+            <div id="header-carousel" class="carousel slide" data-bs-touch="true" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active h-100vh w-100vw">
+                        <img src="images/resort.jpg" class="d-block sizefull o-cover o-position-center" alt="...">
+                        <div class="carousel-caption d-block top-50 start-50 translate-middle">
+                            <h1 class="fs-80 text-warning ff-nautigal">Welcome to</h1>
+                            <h1 class="text-uppercase fs-45 fw-bold">D'Paradise</h1>
+                            <p>Best Resort</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100vh w-100vw">
+                        <img src="images/service.jpg" class="d-block sizefull o-cover o-position-center" alt="...">
+                        <div class="carousel-caption d-block top-50 start-50 translate-middle">
+                            <h1 class="fs-80 text-warning ff-nautigal">Welcome to</h1>
+                            <h1 class="text-uppercase fs-45 fw-bold">D'Paradise</h1>
+                            <p>Good Service</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item h-100vh w-100vw">
+                        <img src="images/nature view.jpg" class="d-block sizefull o-cover o-position-center" alt="...">
+                        <div class="carousel-caption d-block top-50 start-50 translate-middle">
+                            <h1 class="fs-80 text-warning ff-nautigal">Welcome to</h1>
+                            <h1 class="text-uppercase fs-45 fw-bold">D'Paradise</h1>
+                            <p>Best View</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <!-- Slider carousel end -->
+    </div>
+
+    <!-- About section starts -->
+    <section class="about my-5 d-flex align-items-center" id="about">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 col-xl-7 text-center l">
+                    <h1 class="text-capitalize fw-bold">
+                        <span class="text-warning">D'Paradise</span> Resort
+                    </h1>
+                    <p class="my-4 lead light fs-6">
+                        Kenyamanan, pelayanan, dan privasi kami jaga untuk memberikan kepuasan bagi pelanggan kami. Menyusung konsep resort yang kental akan budaya Bali menjadi ciri khas yang memberikan pengalaman dan pelajaran akan budaya Bali. 
+                    </p>
+                    <a href="#" class="nav-link text-warning">About Us <i class="fa-solid fa-arrow-right-long m-l-10"></i></a>
+                </div>
+                <div class="col-md-6 col-xl-5 d-flex justify-content-center r">
+                    <div class="img-container bo-rad-7 hov-img-zoom">
+                        <img src="images/bali.jpg" class="sizefull o-cover o-position-center" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About section ends -->
+
+    <!-- Servi section -->
+    <section class="services" id="services">
+        <div class="parallax position-relative text-center" style="background-image: url(images/service-bg.jpg);">
+            <h1 class="fs-60 text-warning fw-bold position-absolute start-50 top-50 translate-middle">
+                Our Services
+            </h1>
+        </div>
+
+        <div class="container m-t-100 m-b-50">
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-5 l">
+                    <div class="service-img hov-img-zoom h-full text-center">
+                        <img src="images/spa.jpg" class="sizefull o-cover o-position-center" alt="">
+                        <a href="#" class="btn btn-outline-warning service-btn trans-0-4 position-absolute start-50 top-50 translate-middle">Spa</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-7">
+                    <div class="row g-3">
+                        <div class="col-lg-6 t">
+                            <div class="service-img hov-img-zoom h-full text-center">
+                                <img src="images/performance.jpeg" class="sizefull o-cover o-position-center" alt="">
+                                <a href="#" class="btn btn-outline-warning service-btn trans-0-4 position-absolute start-50 top-50 translate-middle">Bali Perfomance</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 r">
+                            <div class="service-img hov-img-zoom h-full text-center">
+                                <img src="images/gym.jpg" class="sizefull o-cover o-position-center" alt="">
+                                <a href="#" class="btn btn-outline-warning service-btn trans-0-4 position-absolute start-50 top-50 translate-middle">Gym</a>
+                            </div>
+                        </div>
+                        <div class="col-12 b">
+                            <div class="service-img hov-img-zoom h-full text-center">
+                                <img src="images/resto.jpg" class="sizefull o-cover o-position-center" alt="">
+                                <a href="#" class="btn btn-outline-warning service-btn trans-0-4 position-absolute start-50 top-50 translate-middle">Restaurant</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service section ends -->
+    
+    <!-- testimonials section -->
+    <section class="testimonials py-5" id="testimonials">
+        <div id="user-review" class="carousel slide" data-bs-touch="true" data-bs-ride="carousel">
+            <div class="mx-auto text-center position-absolute start-50 top-0 translate-middle title">
+                <h1 class="fs-45 fw-bold text-dark">Testimonials</h1>
+            </div>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#user-review" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#user-review" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#user-review" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner bg-warning bg-opacity-50">
+                <div class="carousel-item active w-full">
+                    <div class="carousel-caption container d-flex justify-content-center align-items-center">
+                        <div class="text-dark text-center bg-light bo-rad-10 p-5 position-relative">
+                            <img src="images/pas 1.jpeg" class="user-img wrap-cir-pic o-cover o-position-center position-absolute top-0 start-50 translate-middle" alt="">
+                            <h1 class="fs-30">Emma Waktson</h1>
+                            <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i>
+                            <p class="p-t-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab soluta fugit suscipit. Rem deserunt ipsam obcaecati! Eos, assumenda illo. Quisquam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item w-full">
+                    <div class="carousel-caption container d-flex justify-content-center align-items-center">
+                        <div class="text-dark text-center bg-light bo-rad-10 p-5 position-relative">
+                            <img src="images/pas 2.jpg" class="user-img wrap-cir-pic o-cover o-position-center position-absolute top-0 start-50 translate-middle" alt="">
+                            <h1 class="fs-30">Marix Marhchellino Susanto</h1>
+                            <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i>
+                            <p class="p-t-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi corporis sapiente illo quae, cupiditate quibusdam delectus commodi eius fugit quo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item w-full">
+                    <div class="carousel-caption container d-flex justify-content-center align-items-center">
+                        <div class="text-dark text-center bg-light bo-rad-10 p-5 position-relative">
+                            <img src="images/pas 3.jpg" class="user-img wrap-cir-pic o-cover o-position-center position-absolute top-0 start-50 translate-middle" alt="">
+                            <h1 class="fs-30">Anatasya Rebeca</h1>
+                            <i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i><i class="fa-solid fa-star text-warning"></i>
+                            <p class="p-t-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi corporis sapiente illo quae, cupiditate quibusdam delectus commodi eius fugit quo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#user-review" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#user-review" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="container bo-rad-5">
+            <div class="row g-4 py-5">
+                <div class="col-sm-6 col-xl-3 t">
+                    <div class="d-flex justify-content-center align-items-center p-4 bg-warning bg-opacity-10 bo-rad-5">
+                        <span class="display-6 lh-1 text-warning mb-0"><i class="fa-solid fa-flag"></i></span>
+                        <div class="ms-4 h6 fw-normal mb-0">
+                            <div class="d-flex">
+                                <h5 class="mb-0 fw-bold counter">10</h5>
+                                <span class="mb-0 h5">K+</span>
+                            </div>
+                            <p class="mb-0">Visitors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3 b">
+                    <div class="d-flex justify-content-center align-items-center p-4 bg-warning bg-opacity-10 bo-rad-5">
+                        <span class="display-6 lh-1 text-warning mb-0"><i class="fa-solid fa-handshake-simple"></i></span>
+                        <div class="ms-4 h6 fw-normal mb-0">
+                            <div class="d-flex">
+                                <h5 class="mb-0 fw-bold counter">40</h5>
+                                <span class="mb-0 h5">+</span>
+                            </div>
+                            <p class="mb-0">Services</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3 b">
+                    <div class="d-flex justify-content-center align-items-center p-4 bg-warning bg-opacity-10 rounded-3">
+                        <span class="display-6 lh-1 text-warning mb-0"><i class="fa-solid fa-bed"></i></span>
+                        <div class="ms-4 h6 fw-normal mb-0">
+                            <div class="d-flex">
+                                <h5 class="mb-0 fw-bold counter">80</h5>
+                            </div>
+                            <p class="mb-0">Rooms</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3 t">
+                    <div class="d-flex justify-content-center align-items-center p-4 bg-warning bg-opacity-10 bo-rad-5">
+                        <span class="display-6 lh-1 text-warning mb-0"><i class="fa-solid fa-kitchen-set"></i></span>
+                        <div class="ms-4 h6 fw-normal mb-0">
+                            <div class="d-flex">
+                                <h5 class="mb-0 fw-bold counter">40</h5>
+                            </div>
+                            <p class="mb-0">Pro Chefs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- contact-us section -->
+        <section class="contactUs d-flex align-items-center" id="contactUs">
+            <div class="container mt-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-md-6 col-xl-5 d-flex justify-content-center r">
+                        <div class="img-container bo-rad-7 hov-img-zoom w-full">
+                            <img src="images/villa.jpg" class="sizefull o-cover o-position-center" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-7 l">
+                        <h2 class="text-center fw-bold fs-28 mb-4">Contact Us</h2>
+                        <form action="">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+                                <label for="floatingEmail">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="floatingMessage" placeholder="message" required style="height: 150px;"></textarea>
+                                <label for="floatingMessage">Message</label>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-warning px-5">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact us section ends-->
+    </section>
+    <!-- testimonials section ends -->
+
+
+    <section class="pricing" id="pricing">
+        <div class="parallax position-relative text-center my-5" style="background-image: url(images/bali-night.jpg);">
+            <h1 class="fs-60 fc-white fw-bold position-absolute start-50 top-50 translate-middle">
+                Pricing
+            </h1>
+        </div>
+
+        <div class="container pb-5">
+            <!-- Tabs START -->
+            <ul class="nav nav-pills nav-pills-bg-soft justify-content-center mb-4 px-3 py-3" id="course-pills-tab" role="tablist">
+                <!-- Tab item -->
+                <li class="nav-item me-2 me-sm-5">
+                    <button class="mb-2 mb-md-0 fs-5 btn btn-outline-warning fw-bold active" id="presidential" data-bs-toggle="pill" data-bs-target="#presidential-suite" type="button" role="tab" aria-controls="presidential-suite" aria-selected="false">Presidential</button>
+                </li>
+                <!-- Tab item -->
+                <li class="nav-item me-2 me-sm-5">
+                    <button class="mb-2 mb-md-0 fs-5 btn btn-outline-warning fw-bold" id="deluxe" data-bs-toggle="pill" data-bs-target="#deluxe-suite" type="button" role="tab" aria-controls="deluxe-suite" aria-selected="false">Deluxe</button>
+                </li>
+                <!-- Tab item -->
+                <li class="nav-item me-2 me-sm-5">
+                    <button class="mb-2 mb-md-0 fs-5 btn btn-outline-warning fw-bold" id="regular" data-bs-toggle="pill" data-bs-target="#regular-suite" type="button" role="tab" aria-controls="regular-suite" aria-selected="false">Regular</button>
+                </li>
+            </ul>
+            <!-- Tabs END -->
+
+            <div class="tab-content" id="course-pills-tabContent">
+                <div class="tab-pane fade show active" id="presidential-suite" role="tabpanel" aria-labelledby="presidential">
+                    <div class="container">
+                        <div class="row align-items-center g-4 py-2">
+                            <div class="col-md-6 col-xl-7">
+                                <div class="img-container bo-rad-7 hov-img-zoom">
+                                    <img src="images/presidential.jpg" class="sizefull o-cover o-position-center" alt="">
+                                </div> 
+                            </div>
+                            <div class="col-md-6 col-xl-5">
+                                <div class="card price-card border-warning mb-3">
+                                    <div class="card-header text-center bg-light bg-opacity-50">
+                                        <span class="fs-24 text-warning fw-bold">Presidential Suite</span>
+                                    </div>
+                                    <div class="card-body text-center bg-warning bg-opacity-50">
+                                        <span class="fs-32"> Rp </span> 
+                                        <span class="fw-bold fs-28">3.000K</span> 
+                                    </div>
+                                    <div class="card-footer">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>65m<sup>2</sup> Room Size</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>5 Bed 5 room</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>2 Person Breakfast & Dinner Included</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Pool Access</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Private Beach Access</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Bathtub & Sauna Included</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="flush-headingOne">
+                                                            <button class="accordion-button collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                                <p class="card-text"><i class="fa-solid fa-xmark m-r-10 text-danger"></i>All Services Included</p>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                                            <div class="accordion-body">
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">
+                                                                        <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Bali Performance</p>
+                                                                        <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Restaurant</p>   
+                                                                        <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Gym</p>
+                                                                        <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Spa</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Free Laundry</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade show" id="deluxe-suite" role="tabpanel" aria-labelledby="deluxe">
+                    <div class="container">
+                        <div class="row align-items-center g-4 py-2">
+                            <div class="col-md-6 col-xl-7">
+                                <div class="img-container bo-rad-7 hov-img-zoom">
+                                    <img src="images/deluxe.jpg" class="sizefull o-cover o-position-center" alt="">
+                                </div> 
+                            </div>
+                            <div class="col-md-6 col-xl-5">
+                                <div class="card price-card border-warning mb-3">
+                                    <div class="card-header text-center bg-light bg-opacity-50">
+                                        <span class="fs-24 text-warning fw-bold">Deluxe Suite</span>
+                                    </div>
+                                    <div class="card-body text-center bg-warning bg-opacity-50">
+                                        <span class="fs-32"> Rp </span> 
+                                        <span class="fw-bold fs-28">2.000K</span> 
+                                    </div>
+                                    <div class="card-footer">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>25m<sup>2</sup> Room Size</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>2 Bed 2 room</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>2 Person Breakfast & Dinner Included</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Pool Access</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Private Beach Access</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i><span class="text-decoration-line-through">Bathtub</span> & Sauna Included</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="flush-headingOne">
+                                                            <button class="accordion-button collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                                <p class="card-text"><i class="fa-solid fa-xmark m-r-10 text-danger"></i>All Services Included</p>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                                            <div class="accordion-body">
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">
+                                                                        <p class="card-text"><i class="fa-solid fa-xmark m-r-10 text-danger"></i>Bali Performance</p>
+                                                                        <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Restaurant</p>   
+                                                                        <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Gym</p>
+                                                                        <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Spa</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-xmark m-r-10 text-danger"></i>Free Laundry</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade show" id="regular-suite" role="tabpanel" aria-labelledby="regular">
+                    <div class="container">
+                        <div class="row align-items-center g-4 py-2">
+                            <div class="col-md-6 col-xl-7">
+                                <div class="img-container bo-rad-7 hov-img-zoom">
+                                    <img src="images/regular.jpg" class="sizefull o-cover o-position-center" alt="">
+                                </div> 
+                            </div>
+                            <div class="col-md-6 col-xl-5">
+                                <div class="card price-card border-warning mb-3">
+                                    <div class="card-header text-center bg-light bg-opacity-50">
+                                        <span class="fs-24 text-warning fw-bold">Regular Suite</span>
+                                    </div>
+                                    <div class="card-body text-center bg-warning bg-opacity-50">
+                                        <span class="fs-32"> Rp </span> 
+                                        <span class="fw-bold fs-28">1.500K</span> 
+                                    </div>
+                                    <div class="card-footer">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>25m<sup>2</sup> Room Size</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>1 Bed 1 room</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>1 Person Breakfast & Dinner Included</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Pool Access</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Private Beach Access</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-xmark m-r-10 text-danger"></i>Bathtub & Sauna Included</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="flush-headingOne">
+                                                            <button class="accordion-button collapsed p-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                                <p class="card-text"><i class="fa-solid fa-xmark m-r-10 text-danger"></i>All Services Included</p>
+                                                            </button>
+                                                        </h2>
+                                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                                            <div class="accordion-body">
+                                                                <ul class="list-group list-group-flush">
+                                                                    <li class="list-group-item">
+                                                                        <p class="card-text"><i class="fa-solid fa-xmark m-r-10 text-danger"></i>Bali Performance</p>
+                                                                        <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Restaurant</p>   
+                                                                        <p class="card-text"><i class="fa-solid fa-check m-r-10 text-success"></i>Gym</p>
+                                                                        <p class="card-text"><i class="fa-solid fa-xmark m-r-10 text-danger"></i>Spa</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <p class="card-text"><i class="fa-solid fa-xmark m-r-10 text-danger"></i>Free Laundry</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="border-top: solid 6px #ffc107";>
+        <div class="container mt-5">
+            <div class="row mt-3 text-center text-md-start">
+                <div class="col-md-8 col-lg-4 mx-auto mb-4 text-dark">
+                    <h6 class="text-uppercase fw-bold">D'Paradise</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto bg-warning" style="width: 60px; height: 5px">
+                    <p>
+                        Kenyamanan, pelayanan, dan privasi kami jaga untuk memberikan kepuasan bagi pelanggan kami. 
+                        Menyusung konsep resort yang kental akan budaya Bali menjadi ciri khas yang memberikan pengalaman dan pelajaran akan budaya Bali.
+                    </p>
+                </div>
+                <div class="col-md-4 col-lg-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold">Navbar</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto bg-warning" style="width: 60px; height: 5px">
+                    <p>
+                        <a href="#home" class="nav-link text-dark p-0">Home</a>
+                    </p>
+                    <p>
+                        <a href="#about" class="nav-link text-dark p-0">About Us</a>
+                    </p>
+                    <p>
+                        <a href="#services" class="nav-link text-dark p-0">Services</a>
+                    </p>
+                    <p>
+                        <a href="#testimonials" class="nav-link text-dark p-0">Testiomonials</a>
+                    </p>
+                    <p>
+                        <a href="#pricing" class="nav-link text-dark p-0">Pricing</a>
+                    </p>
+                </div>
+                <div class="col-md-8 col-lg-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold">Contact</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto bg-warning" style="width: 60px; height: 5px">
+                    <p><i class="fas fa-home mr-3"></i> Bali, 23021, Indonesia</p>
+                    <p><i class="fas fa-envelope mr-3"></i> dparadise@resort.com</p>
+                    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                </div>
+                <div class="col-md-4 col-lg-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold">Social Media</h6>
+                    <hr class="mb-4 mt-0 d-inline-block mx-auto bg-warning" style="width: 60px; height: 5px">
+                    <p>
+                        <a href="https://www.facebook.com/" class="text-dark nav-link p-0">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.twitter.com/" class="text-dark nav-link p-0">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.google.com/" class="text-dark nav-link p-0">
+                            <i class="fab fa-google"></i> Google
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/" class="text-dark nav-link p-0">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.youtube.com/" class="text-dark nav-link p-0">
+                            <i class="fab fa-youtube"></i> Youtube
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 bg-warning">
+            @copyright D'Paradise 2022
+        </div>
+    </footer>
+    <!-- Footer -->
+    
+    <!-- Bootstrap javaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- jquery javaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- Date picker javaScript -->        
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <!-- Counter Up javaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+    <!-- ScorllReveal javaScript-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- custom javaScript-->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

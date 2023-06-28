@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=The+Nautigal&display=swap");
+:root {
+  --bs-body-font-family: "Poppins", sans-serif;
+  --color-black: #252525;
+  --color-gold: #ffde96;
+  --color-white: #fff;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.ff-nautigal {
+  font-family: "The Nautigal", sans-serif;
+}
+
+.fc-black {
+  color: var(--color-black);
+}
+
+.fc-gold {
+  color: var(--color-gold);
+}
+
+.fc-white {
+  color: var(--color-white);
+}
+
+.bg-black {
+  background: var(--color-black);
+}
+
+.bg-gold {
+  background: var(--color-gold);
+}
+
+.bg-white {
+  background: var(--color-white);
+}
+
+.bg-transparent {
+  background: transparent;
+}
+
+header, nav {
+  z-index: 1000;
+}
+
+nav, .modal-open, .modal {
+  padding-right: 0px !important;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.collapsed#navbar-toggler .close {
+  display: none;
+  -webkit-transition: display .4s;
+  transition: display .4s;
+}
+
+.navbar-light #navbar-toggler .open {
+  display: none;
+  -webkit-transition: display .4s;
+  transition: display .4s;
+}
+
+.navbar-light #navbar-toggler .close {
+  display: block;
+}
+
+#click-collapse::before {
+  content: '';
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  min-height: 1vh;
+  height: 100%;
+  z-index: 100;
+}
+
+#header-carousel .carousel-item img {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+#header-carousel .carousel-caption {
+  position: absolute;
+  right: unset;
+  bottom: unset;
+  left: unset;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+
+.img-container {
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.parallax {
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.services .container .row {
+  overflow: hidden;
+}
+
+.services .container .row .service-btn {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  z-index: 20;
+}
+
+.services .container .row img {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.services .container .row .service-img {
+  position: relative;
+}
+
+.services .container .row .service-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.services .container .row .service-img:hover img {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.services .container .row .service-img:hover .service-btn {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+#user-review .carousel-caption {
+  min-height: 500px;
+  height: 100%;
+  position: unset;
+  right: unset;
+  bottom: unset;
+  left: unset;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+#user-review .title {
+  z-index: 1;
+}
+
+#user-review .carousel-control-next::before, #user-review .carousel-control-prev::before {
+  content: "";
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: var(--color-black);
+  border-radius: 50%;
+  z-index: -5;
+  width: 50px;
+  height: 50px;
+}
+
+#user-review .user-img {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.form-control:focus, .form-select:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: var(--color-gold);
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem var(--color-gold);
+          box-shadow: 0 0 0 0.25rem var(--color-gold);
+}
+
+@media only screen and (max-width: 992px) {
+  #user-review .carousel-caption {
+    min-height: 600px;
+    height: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
